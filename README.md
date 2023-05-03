@@ -1,1 +1,2 @@
-Angular UI for E-commerce application.
+# e-commerce
+Angular UI for E-Commerce application
