@@ -22,7 +22,7 @@ export class HeaderComponent {
 
   public logout() {
     this.userAuthService.clear();
-    this.router.navigate(['/home']);
+    this.router.navigate(['/']);
   }
 
 }
