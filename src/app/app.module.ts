@@ -23,6 +23,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { AddNewProductComponent } from './add-new-product/add-new-product.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { DragDirective } from './drag.directive';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     LoginComponent,
     HeaderComponent,
     ForbiddenComponent,
-    AddNewProductComponent
+    AddNewProductComponent,
+    DragDirective
   ],
   imports: [
     BrowserModule,
