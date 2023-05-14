@@ -11,7 +11,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class ShowProductDetailsComponent {
 
   productDetails: Product[] = [];
-  displayedColumns: string[] = ['Id', 'Product Name', 'Product Description', 'Product Discounted Price', 'Product Actual Price'];
+  displayedColumns: string[] = ['Id', 'Product Name', 'Product Description', 'Product Discounted Price', 'Product Actual Price', 'Edit', 'Delete'];
 
   constructor(private productService: ProductService) {}
 
@@ -28,6 +28,17 @@ export class ShowProductDetailsComponent {
         console.log(error);
       }
       
+    );
+  }
+
+  deleteProduct(productId: any) {
+    this.productService.deleteProduct(productId).subscribe(
+      (resp: any) => {
+        this.getAllProducts();
+      },
+      (error:HttpErrorResponse) => {
+        console.log(error);
+      }
     );
   }
 }
