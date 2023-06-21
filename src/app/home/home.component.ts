@@ -4,6 +4,7 @@ import { map } from 'rxjs';
 import { Product } from '../_model/product.model';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ImageProcessingService } from '../image-processing.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,8 @@ export class HomeComponent {
   productDetails: Product[] = [];
 
   constructor(private productService: ProductService,
-    private imageProcessingService: ImageProcessingService) {}
+    private imageProcessingService: ImageProcessingService,
+    private router:Router) {}
 
     ngOnInit(): void {
       this.getAllProducts();
@@ -35,5 +37,9 @@ export class HomeComponent {
       }
       
     );
+  }
+
+  showProductDetails(productId: any) {
+    this.router.navigate(['/productViewDetails', {productId: productId}]);
   }
 }
